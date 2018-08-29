@@ -1,5 +1,20 @@
-apply plugin: 'java'
+project.task("Task1")
 
-task wrapper(type: Wrapper) {
-    gradleVersion = '4.10'
+task("Task2")
+
+task "Task3"
+task Task4 << { println "Task 4 executed" }
+Task4.description = "Task 4 description"
+
+task Task5 << { println "this is task 5" }
+Task5 << { println "another line" }
+
+task Task6 {
+    dependsOn Task4
+    description "this is task 6"
+    doLast {
+        println "Task 6 doLast"
+    }
 }
+
+Task6.dependsOn Task5
