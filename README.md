@@ -1,4 +1,4 @@
-A simple demo repo for gradle build tool.
+# A simple demo repo for gradle build tool.
 
 ## Build Phases of Gradle
 
@@ -40,7 +40,7 @@ task Task6 {
 
 The `doFirst` is actually executed in DESC order, and `doLast` executed in ASC order.
 
-```
+```shell
 gradle Task6
 
 > Task :Task6
@@ -68,7 +68,7 @@ task Task6 {
 Task6.dependsOn Task5
 ```
 
-```
+```shell
 gradle Task6
 
 > Task :Task5
@@ -95,7 +95,7 @@ task Task6 {
 }
 ```
 
-```
+```shell
 gradle Task6
 
 > Task :Task6
@@ -105,3 +105,7 @@ Task 6 doLast - A variable Name
 Variable can be defined in scope with `def` keyword.
 
 Or using `ext.variableName = "a new variable"` and call with `$variableName` in project scope.
+
+## Typed Task
+
+[Typed Task DSL](https://docs.gradle.org/current/dsl/org.gradle.api.Task.html)
