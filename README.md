@@ -10,7 +10,7 @@ Use to configure multi project builds
 
 Executes code in the task that's not the action
 
-```
+```groovy
 Task myTask {
     description "myTask Description"
 }
@@ -20,7 +20,7 @@ Task myTask {
 
 Execute the task actions
 
-```
+```groovy
 task Task6 {
     description "this is task 6"
     doLast {
@@ -40,7 +40,7 @@ task Task6 {
 
 The `doFirst` is actually executed in DESC order, and `doLast` executed in ASC order.
 
-```shell
+```
 gradle Task6
 
 > Task :Task6
@@ -54,7 +54,7 @@ Task 6 doLast 2nd time
 
 By using `TaskName.dependsOn DependedTaskName` can provide dependencies assignment for gradle during execution phase.
 
-```
+```groovy
 task Task5 << { println "this is task 5" }
 Task5 << { println "another line" }
 
@@ -68,7 +68,7 @@ task Task6 {
 Task6.dependsOn Task5
 ```
 
-```shell
+```
 gradle Task6
 
 > Task :Task5
@@ -81,9 +81,11 @@ Task 6 doLast
 
 Multiple task dependencies are supported. Gradle build an hirarchy of dependencies during configuration phases so that during execution phase can correctly execute the task in order.
 
+Using `mustRunAfter` and `shouldRunAfter` to assign a specific dependencies order.
+
 ## Setting Properties on Tasks
 
-```
+```groovy
 def varName = "A variable Name"
 
 task Task6 {
