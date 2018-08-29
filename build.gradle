@@ -1,3 +1,5 @@
+def projectVersion = "1.0"
+
 project.task("Task1")
 
 task("Task2")
@@ -11,9 +13,9 @@ Task5 << { println "another line" }
 
 task Task6 {
     dependsOn Task4
-    description "this is task 6"
+    description "this is task 6 - version $projectVersion"
     doLast {
-        println "Task 6 doLast"
+        println "Task 6 doLast - version $projectVersion"
     }
 }
 

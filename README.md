@@ -80,3 +80,26 @@ Task 6 doLast
 ```
 
 Multiple task dependencies are supported. Gradle build an hirarchy of dependencies during configuration phases so that during execution phase can correctly execute the task in order.
+
+## Setting Properties on Tasks
+
+```
+def varName = "A variable Name"
+
+task Task6 {
+    doLast {
+        println "Task 6 doLast - $varName"
+    }
+}
+```
+
+```
+gradle Task6
+
+> Task :Task6
+Task 6 doLast - A variable Name
+```
+
+Variable can be defined in scope with `def` keyword.
+
+Or using `ext.variableName = "a new variable"` and call with `$variableName` in project scope.
