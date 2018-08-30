@@ -109,3 +109,11 @@ Or using `ext.variableName = "a new variable"` and call with `$variableName` in 
 ## Typed Task
 
 [Typed Task DSL](https://docs.gradle.org/current/dsl/org.gradle.api.Task.html)
+
+## Using Daemon to accelerate the build process
+
+[Gradle Daemon](https://docs.gradle.org/current/userguide/gradle_daemon.html)
+
+You can opt on the daemon by environment variables: add the flag `-Dorg.gradle.daemon=false` to the `GRADLE_OPTS` environment variable.
+
+But would suggest to use properties files in the project or global configuration: add `org.gradle.daemon=false` to the `«GRADLE_USER_HOME»/gradle.properties` file
