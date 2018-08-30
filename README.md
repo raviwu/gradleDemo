@@ -1,4 +1,4 @@
-# A simple demo repo for gradle build tool.
+# A simple demo repo for gradle build tool
 
 ## Build Phases of Gradle
 
