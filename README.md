@@ -117,3 +117,7 @@ Or using `ext.variableName = "a new variable"` and call with `$variableName` in 
 You can opt on the daemon by environment variables: add the flag `-Dorg.gradle.daemon=false` to the `GRADLE_OPTS` environment variable.
 
 But would suggest to use properties files in the project or global configuration: add `org.gradle.daemon=false` to the `«GRADLE_USER_HOME»/gradle.properties` file
+
+## Multi-project Builds
+
+Add top level `build.gradle` file: define

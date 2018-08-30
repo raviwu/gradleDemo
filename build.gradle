@@ -1,1 +1,11 @@
-apply plugin: 'java'
+allprojects {
+    apply plugin: 'java'
+}
+
+project(':dependedproject'){}
+
+project(':gradledemo'){
+    dependencies {
+        compile project(':dependedproject')
+    }
+}
